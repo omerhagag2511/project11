@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
@@ -26,5 +27,12 @@ public class MainActivity extends AppCompatActivity {
     }
     public void go(View view) {
         stringUrl = et.getText().toString();
+        wv.loadUrl(stringUrl);
+    }
+    private class MyWebViewClient extends WebViewClient {
+        public boolean shouldOverrideUrlLoading(WebView view, String url) {
+            view.loadUrl(url);
+            return true;
+        }
     }
 }
