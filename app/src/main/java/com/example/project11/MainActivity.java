@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     WebView wv;
+    EditText et;
     String stringUrl;
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -23,6 +25,6 @@ public class MainActivity extends AppCompatActivity {
         wv = (WebView)findViewById(R.id.wv);
     }
     public void go(View view) {
-
+        stringUrl = et.getText().toString();
     }
 }
