@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wv = (WebView)findViewById(R.id.wv);
+        et = (EditText) findViewById(R.id.url);
     }
     public void go(View view) {
         stringUrl = et.getText().toString();
