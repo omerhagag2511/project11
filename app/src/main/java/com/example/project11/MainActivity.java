@@ -1,0 +1,28 @@
+package com.example.project11;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebView;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class MainActivity extends AppCompatActivity {
+    WebView wv;
+    String stringUrl;
+    @SuppressLint("SetJavaScriptEnabled")
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        wv.getSettings().setJavaScriptEnabled(true);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        wv = (WebView)findViewById(R.id.wv);
+    }
+    public void go(View view) {
+
+    }
+}
