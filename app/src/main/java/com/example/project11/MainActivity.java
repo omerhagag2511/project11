@@ -20,15 +20,16 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        wv.getSettings().setJavaScriptEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         wv = (WebView)findViewById(R.id.wv);
         et = (EditText) findViewById(R.id.url);
+        wv.getSettings().setJavaScriptEnabled(true);
     }
     public void go(View view) {
         stringUrl = et.getText().toString();
         wv.loadUrl(stringUrl);
+        et.setText("");
     }
     private class MyWebViewClient extends WebViewClient {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
